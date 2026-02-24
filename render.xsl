@@ -9,6 +9,40 @@
 				<meta charset="UTF-8"/>
 				<title>autofoam render</title>
 				<link rel="stylesheet" href="https://bmblb3.github.io/filetree_xml_css/style.css"/>
+				<style>
+dir, file, link {
+  display: block;
+  margin-left: 1.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+dir::before {
+  content: "📁 " attr(name);
+  font-weight: 600;
+  display: block;
+  margin-left: -1.25rem;
+}
+
+file {
+  white-space: pre-wrap;
+}
+
+file::before {
+  content: "📄 " attr(name);
+  font-weight: 600;
+  display: block;
+  margin-left: -1.25rem;
+}
+
+link::before {
+  content: "🔗 " attr(name) " → " attr(target);
+  color: #1e90ff;
+  display: block;
+  margin-left: -1.25rem;
+}
+				</style>
 			</head>
 			<body>
 				<xsl:apply-templates select="/dir"/>
